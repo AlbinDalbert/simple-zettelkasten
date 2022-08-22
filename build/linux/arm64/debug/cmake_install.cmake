@@ -1,8 +1,8 @@
-# Install script for directory: /home/pine/Documents/playground/flutter_rust/linux
+# Install script for directory: /home/pine/Documents/apps/simple-zettelkasten/linux
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,83 +44,83 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   
-  file(REMOVE_RECURSE "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/")
+  file(REMOVE_RECURSE "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/")
   
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust")
+  if(EXISTS "$ENV{DESTDIR}/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust"
+         FILE "$ENV{DESTDIR}/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust"
          RPATH "$ORIGIN/lib")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust")
+   "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle" TYPE EXECUTABLE FILES "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/intermediates_do_not_run/flutter_rust")
-  if(EXISTS "$ENV{DESTDIR}/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust")
+file(INSTALL DESTINATION "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle" TYPE EXECUTABLE FILES "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/intermediates_do_not_run/flutter_rust")
+  if(EXISTS "$ENV{DESTDIR}/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust"
-         OLD_RPATH "/home/pine/Documents/playground/flutter_rust/linux/flutter/ephemeral:"
+         FILE "$ENV{DESTDIR}/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust"
+         OLD_RPATH "/home/pine/Documents/apps/simple-zettelkasten/linux/flutter/ephemeral:"
          NEW_RPATH "$ORIGIN/lib")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/flutter_rust")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/flutter_rust")
     endif()
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/data/icudtl.dat")
+   "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/data/icudtl.dat")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/data" TYPE FILE FILES "/home/pine/Documents/playground/flutter_rust/linux/flutter/ephemeral/icudtl.dat")
+file(INSTALL DESTINATION "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/data" TYPE FILE FILES "/home/pine/Documents/apps/simple-zettelkasten/linux/flutter/ephemeral/icudtl.dat")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/lib/libflutter_linux_gtk.so")
+   "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/lib/libflutter_linux_gtk.so")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/lib" TYPE FILE FILES "/home/pine/Documents/playground/flutter_rust/linux/flutter/ephemeral/libflutter_linux_gtk.so")
+file(INSTALL DESTINATION "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/lib" TYPE FILE FILES "/home/pine/Documents/apps/simple-zettelkasten/linux/flutter/ephemeral/libflutter_linux_gtk.so")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   
-  file(REMOVE_RECURSE "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/data/flutter_assets")
+  file(REMOVE_RECURSE "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/data/flutter_assets")
   
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/data/flutter_assets")
+   "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/data/flutter_assets")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle/data" TYPE DIRECTORY FILES "/home/pine/Documents/playground/flutter_rust/build//flutter_assets")
+file(INSTALL DESTINATION "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle/data" TYPE DIRECTORY FILES "/home/pine/Documents/apps/simple-zettelkasten/build//flutter_assets")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/flutter/cmake_install.cmake")
+  include("/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/flutter/cmake_install.cmake")
 
 endif()
 
@@ -132,5 +132,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

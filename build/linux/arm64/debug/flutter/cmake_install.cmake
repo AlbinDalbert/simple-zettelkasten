@@ -1,8 +1,8 @@
-# Install script for directory: /home/pine/Documents/playground/flutter_rust/linux/flutter
+# Install script for directory: /home/pine/Documents/apps/simple-zettelkasten/linux/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/pine/Documents/playground/flutter_rust/build/linux/arm64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/pine/Documents/apps/simple-zettelkasten/build/linux/arm64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

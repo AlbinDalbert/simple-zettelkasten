@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'animations.dart';
 import 'newPage.dart';
-import 'writePermanent.dart';
-import 'writeFleeting.dart';
-import 'writeLiterature.dart';
+import 'Permanent/writePermanent.dart';
+import 'Fleeting/writeFleeting.dart';
+import 'Literature/writeLiterature.dart';
 
 void main() {
   runApp(const MyApp());
