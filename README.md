@@ -1,16 +1,27 @@
-# flutter_rust
+# Simple Zettelkasten
 
-A new Flutter project.
+The goal for this app is to be as minimalistic as possible for zettelkasten notetaking.
+Files will be stored as .md files to create future proofing and redundency.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Road Map
 
-A few resources to get you started if this is your first Flutter project:
+### MVP
+- [x] Set Theme and vibe of the app
+- [ ] Android Support
+- [ ] State: Write new note  
+- [ ] Store note as .md file on device
+- [ ] List of all used (and manually added) tags (used can't be removed)
+- [ ] Search Field
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Not MVP
+- [ ] iOS support
+- [ ] PC support
+- [ ] Webb support
+- [ ] colapsable view of all text related to a tag
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### Bonus
+
+- [ ] Graph View
+- [ ] Customizable Theme
