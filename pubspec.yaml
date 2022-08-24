@@ -38,6 +38,7 @@ dependencies:
   lottie: ^1.4.1
   # flutter_rust_bridge: ^1.6.1
   flutter_highlight: ^0.7.0
+  graphql_flutter: ^5.1.0
 
 dev_dependencies:
   flutter_test:
