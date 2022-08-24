@@ -19,8 +19,8 @@ class _mainBackgroundState extends State<mainBackground> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color.fromARGB(255, 20, 20, 20),
-            Color.fromARGB(255, 50, 50, 50),
+            Color.fromARGB(255, 50, 20, 20),
+            Color.fromARGB(255, 80, 50, 20),
           ],
         ),
       ),
