@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'animations.dart';
+import 'config.dart';
 
 class NewPage extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _NewPageState extends State<NewPage> {
             child: Hero(
           tag: 'addCard',
           child: Stack(children: [
-            mainBackground(),
+            MainBackground(),
           ]),
         )));
   }

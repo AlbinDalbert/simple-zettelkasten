@@ -4,6 +4,7 @@ import '../animations.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 import 'package:flutter_highlight/themes/obsidian.dart';
+import '../config.dart';
 
 class NewFleeting extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _NewFleetingState extends State<NewFleeting> {
           child: Hero(
         tag: 'addFleeting',
         child: Stack(children: [
-          mainBackground(),
+          MainBackground(),
           Center(
             child: Container(
               decoration: BoxDecoration(
@@ -45,7 +46,7 @@ class _NewFleetingState extends State<NewFleeting> {
                         decoration: const InputDecoration(
                             labelStyle: TextStyle(
                                 fontSize: 18,
-                                color: Color.fromARGB(200, 225, 225, 0)),
+                                color: Color.fromARGB(100, 200, 200, 200)),
                             labelText: 'Title',
                             //hintText: 'Title',
                             hintStyle: TextStyle(
@@ -55,20 +56,20 @@ class _NewFleetingState extends State<NewFleeting> {
                           fontSize: 26,
                         ),
                       )),
-                  Container(
-                      margin: const EdgeInsets.all(10),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          labelStyle: TextStyle(
-                              fontSize: 14,
-                              color: Color.fromARGB(200, 225, 225, 0)),
-                          labelText: '#Tags',
-                        ),
-                        style: const TextStyle(
-                          color: Color.fromARGB(200, 255, 255, 0),
-                          fontSize: 16,
-                        ),
-                      )),
+                  // Container(
+                  //     margin: const EdgeInsets.all(10),
+                  //     child: TextFormField(
+                  //       decoration: const InputDecoration(
+                  //         labelStyle: TextStyle(
+                  //             fontSize: 14,
+                  //             color: Color.fromARGB(100, 200, 200, 200)),
+                  //         labelText: '#Tags',
+                  //       ),
+                  //       style: const TextStyle(
+                  //         color: Color.fromARGB(200, 255, 255, 0),
+                  //         fontSize: 16,
+                  //       ),
+                  //     )),
                   Expanded(
                     child: Container(
                         margin: const EdgeInsets.all(10),
@@ -79,7 +80,7 @@ class _NewFleetingState extends State<NewFleeting> {
                           decoration: const InputDecoration(
                               labelStyle: TextStyle(
                                   fontSize: 18,
-                                  color: Color.fromARGB(200, 225, 225, 0)),
+                                  color: Color.fromARGB(100, 200, 200, 200)),
                               labelText: 'Body'),
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 0),
@@ -98,7 +99,7 @@ class _NewFleetingState extends State<NewFleeting> {
                           labelText: 'References',
                           labelStyle: TextStyle(
                               fontSize: 18,
-                              color: Color.fromARGB(200, 225, 225, 0)),
+                              color: Color.fromARGB(100, 200, 200, 200)),
                         ),
                         style: const TextStyle(
                           color: Color.fromARGB(200, 255, 255, 0),

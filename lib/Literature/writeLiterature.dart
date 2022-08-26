@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../animations.dart';
+import '../config.dart';
 
 class NewLiterature extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _NewLiteratureState extends State<NewLiterature> {
             child: Hero(
           tag: 'addLiterature',
           child: Stack(children: [
-            mainBackground(),
+            MainBackground(),
           ]),
         )));
   }

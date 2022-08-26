@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../animations.dart';
+import '../config.dart';
 
 class NewPermanent extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _NewPermanentState extends State<NewPermanent> {
             child: Hero(
           tag: 'addPermanent',
           child: Stack(children: [
-            mainBackground(),
+            MainBackground(),
           ]),
         )));
   }

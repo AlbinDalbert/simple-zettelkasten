@@ -4,6 +4,7 @@ import 'animations.dart';
 import 'Permanent/writePermanent.dart';
 import 'Fleeting/writeFleeting.dart';
 import 'Literature/writeLiterature.dart';
+import 'config.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: MediaQuery.of(context).size.width,
           child: Stack(
             children: [
-              mainBackground(),
+              MainBackground(),
               //Lottie.asset('lib/lottie/70532-background.json'),
               Center(
                   // This is the column with the three main folders.
