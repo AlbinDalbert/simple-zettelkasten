@@ -32,9 +32,8 @@ class _NewFleetingState extends State<NewFleeting> {
           Center(
             child: Container(
               decoration: BoxDecoration(
-                  color: const Color.fromARGB(50, 0, 0, 0),
-                  border: Border.all(
-                      color: const Color.fromARGB(100, 255, 255, 0), width: 1)),
+                  //color: const Color.fromARGB(50, 0, 0, 0),
+                  ),
               height: MediaQuery.of(context).size.height * 0.9,
               width: MediaQuery.of(context).size.width * 0.9,
               child: Column(
