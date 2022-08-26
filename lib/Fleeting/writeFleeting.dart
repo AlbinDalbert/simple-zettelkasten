@@ -23,7 +23,7 @@ class _NewFleetingState extends State<NewFleeting> {
             Navigator.pop(context);
           },
         ),
-        title: const Text('New Fleeting Note'),
+        title: const Text('New $fleetingName Note'),
       ),
       body: Center(
           child: Hero(
@@ -32,75 +32,48 @@ class _NewFleetingState extends State<NewFleeting> {
           MainBackground(),
           Center(
             child: Container(
-              decoration: BoxDecoration(
-                  //color: const Color.fromARGB(50, 0, 0, 0),
-                  ),
-              height: MediaQuery.of(context).size.height * 0.9,
-              width: MediaQuery.of(context).size.width * 0.9,
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
                   Container(
-                      margin: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.only(left: 10, right: 10),
                       child: TextFormField(
-                        //initialValue: 'Title',
                         decoration: const InputDecoration(
-                            labelStyle: TextStyle(
-                                fontSize: 18,
-                                color: Color.fromARGB(100, 200, 200, 200)),
-                            labelText: 'Title',
-                            //hintText: 'Title',
-                            hintStyle: TextStyle(
-                                color: Color.fromARGB(100, 225, 225, 0))),
+                            hintText: 'Title',
+                            hintStyle:
+                                TextStyle(color: secondaryContrastColor)),
                         style: const TextStyle(
                           color: Colors.yellow,
-                          fontSize: 26,
+                          fontSize: 28,
                         ),
                       )),
-                  // Container(
-                  //     margin: const EdgeInsets.all(10),
-                  //     child: TextFormField(
-                  //       decoration: const InputDecoration(
-                  //         labelStyle: TextStyle(
-                  //             fontSize: 14,
-                  //             color: Color.fromARGB(100, 200, 200, 200)),
-                  //         labelText: '#Tags',
-                  //       ),
-                  //       style: const TextStyle(
-                  //         color: Color.fromARGB(200, 255, 255, 0),
-                  //         fontSize: 16,
-                  //       ),
-                  //     )),
                   Expanded(
                     child: Container(
-                        margin: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.only(left: 10, right: 10),
                         child: TextFormField(
-                          //initialValue: 'Title',
                           keyboardType: TextInputType.multiline,
                           maxLines: null,
                           decoration: const InputDecoration(
-                              labelStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: Color.fromARGB(100, 200, 200, 200)),
-                              labelText: 'Body'),
+                              hintText: 'Body',
+                              hintStyle:
+                                  TextStyle(color: secondaryContrastColor)),
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 0),
-                            fontSize: 18,
+                            fontSize: 20,
                           ),
                         )),
                   ),
                   Container(
                       margin: const EdgeInsets.all(10),
                       child: TextFormField(
-                        //initialValue: 'Title',
                         keyboardType: TextInputType.multiline,
-                        minLines: 3,
-                        maxLines: 10,
+                        minLines: 1,
+                        maxLines: 6,
                         decoration: const InputDecoration(
-                          labelText: 'References',
-                          labelStyle: TextStyle(
-                              fontSize: 18,
-                              color: Color.fromARGB(100, 200, 200, 200)),
-                        ),
+                            hintText: 'References',
+                            hintStyle:
+                                TextStyle(color: secondaryContrastColor)),
                         style: const TextStyle(
                           color: Color.fromARGB(200, 255, 255, 0),
                           fontSize: 16,

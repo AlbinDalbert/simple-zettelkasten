@@ -16,12 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: appName,
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'Zettelkasten'),
+      home: const MyHomePage(title: appName),
     );
   }
 }
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Container(
                                   margin: EdgeInsets.only(left: 20),
-                                  child: Text('Fleeting',
+                                  child: Text(fleetingName,
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Container(
                                   margin: EdgeInsets.only(left: 20),
-                                  child: Text('Literature',
+                                  child: Text(literatureName,
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size
@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Container(
                                   margin: EdgeInsets.only(left: 20),
-                                  child: Text('Permanent',
+                                  child: Text(permanentName,
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size

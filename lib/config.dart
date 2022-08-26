@@ -8,6 +8,9 @@ const secondaryContrastColor = Color.fromARGB(100, 200, 200, 200);
 
 // --- Strings --- //
 const appName = "Zettelkasten";
+const fleetingName = "Fleeting"; // this is the first folder
+const literatureName = "Literature"; // this is the second folder
+const permanentName = "Permanent"; // this is the third folder
 
 // --- Themes --- //
 var defaultTheme = ThemeData(
@@ -17,6 +20,8 @@ var defaultTheme = ThemeData(
 
 // --- Widgets --- //
 class MainBackground extends StatefulWidget {
+  const MainBackground({Key? key}) : super(key: key);
+
   @override
   _MainBackgroundState createState() => _MainBackgroundState();
 }
@@ -32,8 +37,11 @@ class _MainBackgroundState extends State<MainBackground> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color.fromARGB(255, 20, 20, 20),
-            Color.fromARGB(255, 20, 20, 20),
+            primaryContrastColor,
+            primaryContrastColor,
+            //secondaryContrastColor,
+            //Color.fromARGB(255, 20, 20, 20),
+            //Color.fromARGB(255, 20, 20, 20),
             // Color.fromARGB(255, 80, 50, 20),
           ],
         ),
