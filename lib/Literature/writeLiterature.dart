@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../animations.dart';
 import '../config.dart';
+import 'package:hashtagable/hashtagable.dart';
 
 class NewLiterature extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _NewLiteratureState extends State<NewLiterature>
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+        duration: const Duration(milliseconds: 1200), vsync: this);
 
     controller.addStatusListener((status) async {
       if (status == AnimationStatus.completed) {
@@ -39,7 +40,7 @@ class _NewLiteratureState extends State<NewLiterature>
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.delete),
+          icon: const Icon(Icons.delete),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -60,12 +61,12 @@ class _NewLiteratureState extends State<NewLiterature>
                 children: [
                   Container(
                       margin: const EdgeInsets.only(left: 10, right: 10),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
+                      child: const HashTagTextField(
+                        decoration: InputDecoration(
                             hintText: 'Title',
                             hintStyle:
                                 TextStyle(color: secondaryContrastColor)),
-                        style: const TextStyle(
+                        basicStyle: TextStyle(
                           color: Colors.yellow,
                           fontSize: 28,
                         ),
@@ -73,14 +74,14 @@ class _NewLiteratureState extends State<NewLiterature>
                   Expanded(
                     child: Container(
                         margin: const EdgeInsets.only(left: 10, right: 10),
-                        child: TextFormField(
+                        child: const HashTagTextField(
                           keyboardType: TextInputType.multiline,
                           maxLines: null,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                               hintText: 'Body',
                               hintStyle:
                                   TextStyle(color: secondaryContrastColor)),
-                          style: const TextStyle(
+                          basicStyle: TextStyle(
                             color: Color.fromARGB(255, 255, 255, 0),
                             fontSize: 20,
                           ),
@@ -88,15 +89,15 @@ class _NewLiteratureState extends State<NewLiterature>
                   ),
                   Container(
                       margin: const EdgeInsets.all(10),
-                      child: TextFormField(
+                      child: const HashTagTextField(
                         keyboardType: TextInputType.multiline,
                         minLines: 1,
                         maxLines: 6,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                             hintText: 'References',
                             hintStyle:
                                 TextStyle(color: secondaryContrastColor)),
-                        style: const TextStyle(
+                        basicStyle: TextStyle(
                           color: Color.fromARGB(200, 255, 255, 0),
                           fontSize: 16,
                         ),

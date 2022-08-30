@@ -9,6 +9,8 @@ import 'package:flutter_highlight/themes/obsidian.dart';
 import '../config.dart';
 
 class FileListFleeting extends StatefulWidget {
+  const FileListFleeting({Key? key}) : super(key: key);
+
   @override
   _FileListFleetingState createState() => _FileListFleetingState();
 }
@@ -44,37 +46,36 @@ class _FileListFleetingState extends State<FileListFleeting>
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_sharp),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
         title: const Text('$fleetingName Notes'),
       ),
       body: Container(
           color: primaryContrastColor,
           child: Column(children: [
             Container(
-                //color: Colors.black,
-                // decoration: BoxDecoration(
-                //     border: Border(
-                //         bottom: BorderSide(
-                //             width: 1, color: secondaryContrastColor))),
+                margin: const EdgeInsets.only(
+                    top: 5, left: 20, right: 20, bottom: 5),
                 height: MediaQuery.of(context).size.height * 0.05,
                 width: MediaQuery.of(context).size.width,
                 child: const Center(
-                    child: Text(
-                  '{{Stats}}',
-                  style: TextStyle(color: Colors.orange, fontSize: 26),
-                  textAlign: TextAlign.center,
-                ))),
+                  child: Text(
+                    '{{fancy stats}}}',
+                    style: TextStyle(color: Colors.orange, fontSize: 22),
+                    textAlign: TextAlign.center,
+                  ),
+                )),
             Expanded(
                 child: Container(
-                    margin: const EdgeInsets.only(left: 20, right: 20),
+                    margin: const EdgeInsets.only(left: 30, right: 30),
                     child: GridView.count(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 30,
+                      mainAxisSpacing: 30,
                       children: [
                         Container(color: Colors.green),
                         Container(color: Colors.blue),
@@ -103,7 +104,7 @@ class _FileListFleetingState extends State<FileListFleeting>
               MaterialPageRoute(builder: (context) => NewFleeting()),
             );
           }), // This trailing comma makes auto-formatting nicer for build methods.
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

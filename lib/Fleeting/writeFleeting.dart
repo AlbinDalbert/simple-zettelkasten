@@ -5,6 +5,7 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 import 'package:flutter_highlight/themes/obsidian.dart';
 import '../config.dart';
+import 'package:hashtagable/hashtagable.dart';
 
 class NewFleeting extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _NewFleetingState extends State<NewFleeting>
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+        duration: const Duration(milliseconds: 1200), vsync: this);
 
     controller.addStatusListener((status) async {
       if (status == AnimationStatus.completed) {
@@ -42,7 +43,7 @@ class _NewFleetingState extends State<NewFleeting>
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.delete),
+          icon: const Icon(Icons.delete),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -63,12 +64,12 @@ class _NewFleetingState extends State<NewFleeting>
                 children: [
                   Container(
                       margin: const EdgeInsets.only(left: 10, right: 10),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
+                      child: const HashTagTextField(
+                        decoration: InputDecoration(
                             hintText: 'Title',
                             hintStyle:
                                 TextStyle(color: secondaryContrastColor)),
-                        style: const TextStyle(
+                        basicStyle: TextStyle(
                           color: Colors.yellow,
                           fontSize: 28,
                         ),
@@ -76,14 +77,14 @@ class _NewFleetingState extends State<NewFleeting>
                   Expanded(
                     child: Container(
                         margin: const EdgeInsets.only(left: 10, right: 10),
-                        child: TextFormField(
+                        child: const HashTagTextField(
                           keyboardType: TextInputType.multiline,
                           maxLines: null,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                               hintText: 'Body',
                               hintStyle:
                                   TextStyle(color: secondaryContrastColor)),
-                          style: const TextStyle(
+                          basicStyle: TextStyle(
                             color: Color.fromARGB(255, 255, 255, 0),
                             fontSize: 20,
                           ),
@@ -91,15 +92,15 @@ class _NewFleetingState extends State<NewFleeting>
                   ),
                   Container(
                       margin: const EdgeInsets.all(10),
-                      child: TextFormField(
+                      child: const HashTagTextField(
                         keyboardType: TextInputType.multiline,
                         minLines: 1,
                         maxLines: 6,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                             hintText: 'References',
                             hintStyle:
                                 TextStyle(color: secondaryContrastColor)),
-                        style: const TextStyle(
+                        basicStyle: TextStyle(
                           color: Color.fromARGB(200, 255, 255, 0),
                           fontSize: 16,
                         ),
