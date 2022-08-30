@@ -11,7 +11,31 @@ class NewFleeting extends StatefulWidget {
   _NewFleetingState createState() => _NewFleetingState();
 }
 
-class _NewFleetingState extends State<NewFleeting> {
+class _NewFleetingState extends State<NewFleeting>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: Duration(milliseconds: 1200), vsync: this);
+
+    controller.addStatusListener((status) async {
+      if (status == AnimationStatus.completed) {
+        Navigator.pop(context);
+        Navigator.pop(context);
+        controller.reset();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     //String bodyStr = "default body";
@@ -28,8 +52,9 @@ class _NewFleetingState extends State<NewFleeting> {
       body: Center(
           child: Hero(
         tag: 'addFleeting',
-        child: Stack(children: [
-          MainBackground(),
+        child: Material(
+            child: Stack(children: [
+          const MainBackground(),
           Center(
             child: Container(
               height: MediaQuery.of(context).size.height,
@@ -82,22 +107,37 @@ class _NewFleetingState extends State<NewFleeting> {
                 ],
               ),
             ),
-          )
-        ]),
+          ),
+          //SaveAnimation(),
+        ])),
       )),
 
       floatingActionButton: FloatingActionButton(
         heroTag: 'addCard',
         onPressed: () {
-          //  Navigator.push(
-          //  context,
-          //MaterialPageRoute(builder: (context) => NewPage()),
-          // );
+          //Lottie.asset("complete-001.json");
+          saveAnimation();
+          //Navigator.pop(context);
         },
-        tooltip: 'Add Card',
+        tooltip: 'Save Note',
         child: const Icon(Icons.save),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
+
+  void saveAnimation() => showDialog(
+      context: context,
+      builder: ((context) => Dialog(
+          backgroundColor: Colors.transparent,
+          child: Center(
+              child: Container(
+                  //height: MediaQuery.of(context).size.height * 0.4,
+                  //width: MediaQuery.of(context).size.width * 0.4,
+                  child: Lottie.asset('lib/lottie/17601-complete-001.json',
+                      repeat: false,
+                      frameRate: FrameRate(60),
+                      controller: controller, onLoaded: (composition) {
+            controller.forward();
+          }))))));
 }

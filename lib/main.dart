@@ -5,6 +5,7 @@ import 'Permanent/writePermanent.dart';
 import 'Fleeting/writeFleeting.dart';
 import 'Literature/writeLiterature.dart';
 import 'config.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      color: primaryContrastColor,
       home: const MyHomePage(title: appName),
     );
   }
