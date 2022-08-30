@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       theme: ThemeData(
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
               color: primaryColor, foregroundColor: primaryContrastColor),
           primarySwatch: primaryColor,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: MediaQuery.of(context).size.width,
           child: Stack(
             children: [
-              MainBackground(),
+              const MainBackground(),
               //Lottie.asset('lib/lottie/70532-background.json'),
               Center(
                   // This is the column with the three main folders.
@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   // ------ The container for 'Fleeting' notes --------
                   Container(
-                      margin: EdgeInsets.only(bottom: 10),
+                      margin: const EdgeInsets.only(bottom: 10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.yellow, width: 1.5)),
                       child: InkWell(
@@ -81,7 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => FileListFleeting()),
+                                  builder: (context) =>
+                                      const FileListFleeting()),
                             );
                           },
                           child: Container(
@@ -93,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                     Container(
-                                        margin: EdgeInsets.only(left: 20),
+                                        margin: const EdgeInsets.only(left: 20),
                                         child: Text(fleetingName,
                                             style: TextStyle(
                                                 fontSize: MediaQuery.of(context)
@@ -148,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                  margin: EdgeInsets.only(left: 20),
+                                  margin: const EdgeInsets.only(left: 20),
                                   child: Text(literatureName,
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
@@ -190,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           )))),
                   // -------- The container for 'Permanent' notes ---------
                   Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: const EdgeInsets.only(top: 10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.yellow, width: 1.5)),
 
@@ -203,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                  margin: EdgeInsets.only(left: 20),
+                                  margin: const EdgeInsets.only(left: 20),
                                   child: Text(permanentName,
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
@@ -256,15 +257,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 // TODO add menu.
                 IconButton(
                   color: primaryContrastColor,
-                  icon: Icon(Icons.menu),
+                  icon: const Icon(Icons.menu),
                   onPressed: () {},
                 ),
-                Spacer(),
+                const Spacer(),
                 // TODO add Search function
                 // TODO add animation
                 IconButton(
                     color: primaryContrastColor,
-                    icon: Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                     onPressed: () {}),
               ],
             ))
