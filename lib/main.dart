@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'animations.dart';
 import 'Permanent/writePermanent.dart';
 import 'Fleeting/writeFleeting.dart';
+import 'Fleeting/fileListFleeting.dart';
 import 'Literature/writeLiterature.dart';
 import 'config.dart';
 import 'dart:math';
@@ -19,9 +20,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+          appBarTheme: AppBarTheme(
+              color: primaryColor, foregroundColor: primaryContrastColor),
+          primarySwatch: primaryColor,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          colorScheme: const ColorScheme(
+              onPrimary: primaryContrastColor,
+              onSecondary: primaryContrastColor,
+              error: Colors.red,
+              onError: Colors.redAccent,
+              brightness: Brightness.dark,
+              primary: primaryColor,
+              secondary: primaryColor,
+              background: primaryContrastColor,
+              onBackground: primaryColor,
+              surface: primaryColor,
+              onSurface: primaryContrastColor),
+          brightness: Brightness.dark),
       color: primaryContrastColor,
       home: const MyHomePage(title: appName),
     );
@@ -61,56 +76,64 @@ class _MyHomePageState extends State<MyHomePage> {
                       margin: EdgeInsets.only(bottom: 10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.yellow, width: 1.5)),
-
-                      //color: Colors.transparent,
-                      child: Container(
-                          height: MediaQuery.of(context).size.height * 0.2,
-                          width: MediaQuery.of(context).size.width * 0.8,
-                          child: Center(
-                              child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                  margin: EdgeInsets.only(left: 20),
-                                  child: Text(fleetingName,
-                                      style: TextStyle(
-                                          fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.1,
-                                          color: Colors.yellow,
-                                          fontWeight: FontWeight.bold))),
-                              //Expanded(
-                              InkWell(
-                                child: Hero(
-                                    tag: 'addFleeting',
-                                    child: Container(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.2,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.2,
-                                      margin: EdgeInsets.only(
-                                          left: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.05),
-                                      color: Colors.yellow,
-                                      child: const Icon(
-                                        Icons.add,
-                                        color: Colors.black,
-                                      ),
-                                    )),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => NewFleeting()),
-                                  );
-                                },
-                              )
-                            ],
-                          )))),
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FileListFleeting()),
+                            );
+                          },
+                          child: Container(
+                              height: MediaQuery.of(context).size.height * 0.2,
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              child: Center(
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                    Container(
+                                        margin: EdgeInsets.only(left: 20),
+                                        child: Text(fleetingName,
+                                            style: TextStyle(
+                                                fontSize: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.1,
+                                                color: Colors.yellow,
+                                                fontWeight: FontWeight.bold))),
+                                    //Expanded(
+                                    InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    NewFleeting()),
+                                          );
+                                        },
+                                        child: Hero(
+                                            tag: 'addFleeting',
+                                            child: Container(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.2,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.2,
+                                                margin: EdgeInsets.only(
+                                                    left: MediaQuery.of(context)
+                                                            .size
+                                                            .width *
+                                                        0.05),
+                                                color: Colors.yellow,
+                                                child: const Icon(
+                                                  Icons.add,
+                                                  color: Colors.black,
+                                                ))))
+                                  ]))))),
                   // ------- The container for 'Literature' notes ----------
                   Container(
                       decoration: BoxDecoration(
@@ -227,18 +250,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         // ------ The bottom navigation bar ----------
         bottomNavigationBar: BottomAppBar(
-            color: Colors.yellow,
+            color: primaryColor,
             child: Row(
               children: [
                 // TODO add menu.
                 IconButton(
+                  color: primaryContrastColor,
                   icon: Icon(Icons.menu),
                   onPressed: () {},
                 ),
                 Spacer(),
                 // TODO add Search function
                 // TODO add animation
-                IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                IconButton(
+                    color: primaryContrastColor,
+                    icon: Icon(Icons.search),
+                    onPressed: () {}),
               ],
             ))
         /*    

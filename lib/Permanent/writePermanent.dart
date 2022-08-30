@@ -110,7 +110,6 @@ class _NewPermanentState extends State<NewPermanent>
       )),
 
       floatingActionButton: FloatingActionButton(
-        heroTag: 'addCard',
         onPressed: () {
           //Lottie.asset("complete-001.json");
           saveAnimation();
