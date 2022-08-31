@@ -7,8 +7,21 @@ import 'Fleeting/fileListFleeting.dart';
 import 'Literature/writeLiterature.dart';
 import 'config.dart';
 import 'dart:math';
+import 'package:sqflite/sqflite.dart';
+import 'package:flutter/widgets.dart';
+import 'package:path/path.dart';
 
-void main() {
+void main() async {
+  final database = openDatabase(
+    join(await getDatabasesPath(), 'notes.db'),
+    onCreate: (db, version) {
+      return db.execute(
+        'CREATE TABLE notes(id INTEGER PRIMARY KEY, type INTEGER, title TEXT, created INTEGER, modified INTEGER)',
+      );
+    },
+    version: 1,
+  );
+
   runApp(const MyApp());
 }
 
@@ -268,20 +281,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     icon: const Icon(Icons.search),
                     onPressed: () {}),
               ],
-            ))
-        /*    
-      floatingActionButton: FloatingActionButton(
-        heroTag: 'addCard',
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => NewPage()),
-          );
-        },
-        tooltip: 'Add Card',
-        child: const Icon(Icons.add),
-      ),*/ // This trailing comma makes auto-formatting nicer for build methods.
-        //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        );
+            )));
   }
 }
