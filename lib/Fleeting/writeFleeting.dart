@@ -1,11 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:path_provider/path_provider.dart';
 import '../animations.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 import 'package:flutter_highlight/themes/obsidian.dart';
 import '../config.dart';
 import 'package:hashtagable/hashtagable.dart';
+
 
 class NewFleeting extends StatefulWidget {
   @override
@@ -15,6 +19,10 @@ class NewFleeting extends StatefulWidget {
 class _NewFleetingState extends State<NewFleeting>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
+
+  final titleTextController = TextEditingController();
+  final bodyTextController = TextEditingController();
+  final referencesTextController = TextEditingController();
 
   @override
   void initState() {
@@ -33,13 +41,46 @@ class _NewFleetingState extends State<NewFleeting>
 
   @override
   void dispose() {
+    titleTextController.dispose();
+    bodyTextController.dispose();
+    referencesTextController.dispose();
     controller.dispose();
     super.dispose();
+  }
+
+  Future<String> get _localPath async {
+    final directory = await getApplicationDocumentsDirectory();
+
+    return directory.path;
+  }
+
+  Future<File> _localFile(String title) async {
+    final path = await _localPath;
+    return File('$path/fleeting/$title.md');
+  }
+
+  Future<File> writeFile(String title, String body, String references) async {
+    final file = await _localFile(title);
+
+    // Write the file
+    return file.writeAsString('# $title\n\n$body\n\n## source:\n$references');
+  }
+
+  void saveFile(String title, String body, String references) {
+    new File('$_localPath/fleeting/$title.md')
+        .create(recursive: true)
+        .then((File file) {
+      writeFile(title, body, references);
+    });
+
+//    writeFile(title, body, references);
+    //return true;
   }
 
   @override
   Widget build(BuildContext context) {
     //String bodyStr = "default body";
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -64,12 +105,13 @@ class _NewFleetingState extends State<NewFleeting>
                 children: [
                   Container(
                       margin: const EdgeInsets.only(left: 10, right: 10),
-                      child: const HashTagTextField(
-                        decoration: InputDecoration(
+                      child: HashTagTextField(
+                        controller: titleTextController,
+                        decoration: const InputDecoration(
                             hintText: 'Title',
                             hintStyle:
                                 TextStyle(color: secondaryContrastColor)),
-                        basicStyle: TextStyle(
+                        basicStyle: const TextStyle(
                           color: Colors.yellow,
                           fontSize: 28,
                         ),
@@ -77,14 +119,15 @@ class _NewFleetingState extends State<NewFleeting>
                   Expanded(
                     child: Container(
                         margin: const EdgeInsets.only(left: 10, right: 10),
-                        child: const HashTagTextField(
+                        child: HashTagTextField(
+                          controller: bodyTextController,
                           keyboardType: TextInputType.multiline,
                           maxLines: null,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               hintText: 'Body',
                               hintStyle:
                                   TextStyle(color: secondaryContrastColor)),
-                          basicStyle: TextStyle(
+                          basicStyle: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 0),
                             fontSize: 20,
                           ),
@@ -92,15 +135,16 @@ class _NewFleetingState extends State<NewFleeting>
                   ),
                   Container(
                       margin: const EdgeInsets.all(10),
-                      child: const HashTagTextField(
+                      child: HashTagTextField(
+                        controller: referencesTextController,
                         keyboardType: TextInputType.multiline,
                         minLines: 1,
                         maxLines: 6,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             hintText: 'References',
                             hintStyle:
                                 TextStyle(color: secondaryContrastColor)),
-                        basicStyle: TextStyle(
+                        basicStyle: const TextStyle(
                           color: Color.fromARGB(200, 255, 255, 0),
                           fontSize: 16,
                         ),
@@ -115,6 +159,8 @@ class _NewFleetingState extends State<NewFleeting>
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          saveFile(titleTextController.text, bodyTextController.text,
+              referencesTextController.text);
           //Lottie.asset("complete-001.json");
           saveAnimation();
           //Navigator.pop(context);

@@ -10,19 +10,32 @@ import 'dart:math';
 import 'package:sqflite/sqflite.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-void main() async {
-  final database = openDatabase(
-    join(await getDatabasesPath(), 'notes.db'),
-    onCreate: (db, version) {
-      return db.execute(
-        'CREATE TABLE notes(id INTEGER PRIMARY KEY, type INTEGER, title TEXT, created INTEGER, modified INTEGER)',
-      );
-    },
-    version: 1,
-  );
+//import 'package:flutter_native_splash/flutter_native_splash.dart';
+
+Future main() async {
+  // final database = openDatabase(
+  //   join(await getDatabasesPath(), 'notes.db'),
+  //   onCreate: (db, version) {
+  //     return db.execute(
+  //       'CREATE TABLE notes(id INTEGER PRIMARY KEY, type INTEGER, title TEXT, created INTEGER, modified INTEGER)',
+  //     );
+  //   },
+  //   version: 1,
+  // );
+
+  // FlutterNativeSplash.removeAfter(initialization);
+  //FlutterNativeSplash.remove(initialization);
+  await initialization(null);
+  //FlutterNativeSplash.remove();
 
   runApp(const MyApp());
+}
+
+Future initialization(BuildContext? context) async {
+  // load some stuff
+  await Future.delayed(const Duration(seconds: 5));
 }
 
 class MyApp extends StatelessWidget {

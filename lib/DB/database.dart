@@ -4,58 +4,30 @@ import 'package:path/path.dart';
 
 enum NoteType { fleeting, literature, permanent }
 
-class Note {
-  final int id;
-  final NoteType type;
-  final String title;
-  final int created;
-  final int modified;
+class NotesDatabase {
+  static final NotesDatabase instance = NotesDatabase._init();
 
-  const Note(
-      {required this.id,
-      required this.type,
-      required this.title,
-      required this.created,
-      required this.modified});
+  static Database? _database;
 
-  // Convert a Dog into a Map. The keys must correspond to the names of the
-  // columns in the database.
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'type': type,
-      'title': title,
-      'created': created,
-      'modified': modified,
-    };
+  NotesDatabase._init();
+
+  Future<Database> get database async {
+    _database ??= await _initDB('notes.db');
+    return _database!;
   }
 
-  @override
-  String toString() {
-    return 'Dog{id: $id, type: $type, title: $title, created: $created, modified: $modified}';
-  }
-}
+  Future<Database> _initDB(String filePath) async {
+    final dbPath = await getDatabasesPath();
+    final path = join(dbPath, filePath);
 
-void initDatabased() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  final database = openDatabase(
-    join(await getDatabasesPath(), 'doggie_database.db'),
-  );
-}
-
-class DatabaseHandler {
-  final database;
-  DatabaseHandler(this.database) {
-    initDatabased();
+    return await openDatabase(path, version: 1, onCreate: _createDB);
   }
 
-  Future<void> insertNote(Note note, database) async {
-    final db = await database;
-    await db.insert(
-      'note',
-      note.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
+  Future _createDB(Database db, int version) async {}
+
+  Future close() async {
+    final db = await instance.database;
+
+    db.close();
   }
 }

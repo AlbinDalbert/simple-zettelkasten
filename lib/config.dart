@@ -32,6 +32,11 @@ class _MainBackgroundState extends State<MainBackground> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
+      // child: Container(
+      //     child: Image.asset('images/blob-background.png',
+      //         height: MediaQuery.of(context).size.height,
+      //         width: MediaQuery.of(context).size.width,
+      //         fit: BoxFit.cover)),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -40,8 +45,8 @@ class _MainBackgroundState extends State<MainBackground> {
             primaryContrastColor,
             primaryContrastColor,
             //secondaryContrastColor,
-            //Color.fromARGB(255, 20, 20, 20),
-            //Color.fromARGB(255, 20, 20, 20),
+            Color.fromARGB(255, 20, 20, 20),
+            Color.fromARGB(255, 20, 20, 20),
             // Color.fromARGB(255, 80, 50, 20),
           ],
         ),
